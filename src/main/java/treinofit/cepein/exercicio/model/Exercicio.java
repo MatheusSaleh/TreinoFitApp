@@ -3,6 +3,9 @@ package treinofit.cepein.exercicio.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import treinofit.cepein.treino.model.Treino;
+
+import java.util.List;
 
 @Entity
 @Table(name = "exercicio")
@@ -20,4 +23,7 @@ public class Exercicio {
     private String grupoMuscular;
 
     private String equipamentoNecessario;
+
+    @ManyToMany(mappedBy = "exercicios")
+    private List<Treino> treinos;
 }

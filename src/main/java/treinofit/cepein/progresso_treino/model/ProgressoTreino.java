@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import treinofit.cepein.desempenho_treino.model.DesempenhoTreino;
 import treinofit.cepein.treino.model.Treino;
+import treinofit.cepein.usuario.model.Usuario;
 
 import java.time.LocalDate;
 
@@ -24,6 +25,10 @@ public class ProgressoTreino {
     @ManyToOne
     @JoinColumn(name = "id_treino")
     private Treino treino;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
     private LocalDate dataProgresso;
 }

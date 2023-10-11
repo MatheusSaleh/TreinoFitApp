@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import treinofit.cepein.exercicio.model.Exercicio;
+import treinofit.cepein.usuario.model.Usuario;
 
 @Entity
 @Table(name = "exercicios_favoritos")
@@ -18,4 +19,7 @@ public class ExerciciosFavoritos {
     @JoinColumn(name = "exercicio_id")
     private Exercicio exercicio;
 
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 }
